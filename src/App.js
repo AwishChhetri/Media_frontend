@@ -9,7 +9,7 @@ function App() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3001/addAccount', {
+            await axios.post('https://media-backend-tddp.onrender.com/addAccount', {
                 accountID: parseInt(accountID),
                 introducerID: parseInt(introducerID)
             });
@@ -23,7 +23,7 @@ function App() {
 
     const fetchAccounts = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/accounts');
+            const response = await axios.get('https://media-backend-tddp.onrender.com/accounts');
             setAccounts(response.data);
         } catch (error) {
             console.error(error);
